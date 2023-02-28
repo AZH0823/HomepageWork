@@ -1119,16 +1119,122 @@ header.header.block .div-line::after {
   overflow: hidden;
   color: white;
 }
+.fuilder-container.main .brandAndSlick .slick-container .pagetor-view {
+  outline: 2px salmon solid;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc {
+  display: flex;
+  margin: 240px 8.3%;
+  gap: 52px;
+  align-items: center;
+  position: relative;
+}
+@media all and (max-width: 896px) {
+  .fuilder-container.main .brandAndSlick .slick-container .item-desc {
+    flex-direction: column;
+    margin: 120px 8.3%;
+  }
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList {
+  position: absolute;
+  right: -5%;
+  top: -15%;
+}
+@media all and (max-width: 896px) {
+  .fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList {
+    top: -6%;
+    right: 0%;
+  }
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList span {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.22222px;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList span + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: -30px;
+  height: 60px;
+  width: 2px;
+  border-radius: 50%;
+  width: 1px;
+  background-color: #26C6D0;
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList span.now {
+  margin-left: -25px;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList span.total {
+  margin-right: -25px;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic {
+  max-width: 555px;
+  max-height: 555px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc {
+  max-width: 432px;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.22222px;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-title {
+  margin-top: 20px;
+  margin-left: -8px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 3.63636px;
+  padding: 0 6px;
+  position: relative;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 100%;
+  z-index: -1;
+  background-color: #26C6D0;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-loream {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
 .fuilder-container.main .brandAndSlick .slick-container::before {
   content: "";
   position: absolute;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/carouse_01.png");
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/carouse_01.png);
   background-repeat: no-repeat no-repeat;
   background-size: cover;
   background-blend-mode: normal, multiply;
   filter: blur(10px);
-  max-width: 1484px;
+  /* max-width: 1484px; */
   width: 100vw;
   min-height: 1484px;
   z-index: -1;
+  padding-bottom: 50vw;
 }/*# sourceMappingURL=MyStyle.css.map */
