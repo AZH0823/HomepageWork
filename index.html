@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage_work-DigiSalad</title>
+  <link rel="stylesheet" href="./CSS/MyStyle.css">
+</head>
+
+<body>
+  <div class="fuilder-container" id="myHompage">
+    <header class="block header">
+      <div class="wrap-container">
+        <nav class="iconList" :style="click_menu ? 'opacity:0;':'opacity:1;' ">
+          <div class="l-nav">
+            <img src="images/logo_c.png" alt="" style="display:none">
+          </div>
+          <div class="r-nav">
+            <div class="btn">START YOUR PROJECT</div>
+            <div class="menu_icon" @click="NavIsopen"><img src="images/Menu-icons.svg" alt=""></div>
+            <!-- menu icon display -->
+
+          </div>
+          <div style="clear:both"></div>
+
+        </nav>
+      </div>
+      <!-- header content display -->
+      <div class="wrap-container">
+        <div class="header-content" :style="click_menu ? 'opacity:0;':'opacity:1;' ">
+          <div class="c-container">
+            <div class="l-content">
+              <p>DIGITAL AGENCY</p>
+            </div>
+            <div class="r-content">
+              <div class="logo">
+                <img src="images/logo_w.png" alt="">
+              </div>
+              <h1>WE CREATE</h1>
+              <h1>AMAZING</h1>
+              <h1>DIGITAL EXPERIENCES</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="content-touch" :style="click_menu ? 'opacity:0;':'opacity:1;' ">
+        <div class="touch-icon">
+          <img src="images/salad.png" alt="">
+        </div>
+        <p class="touch-title">TASTE US NOW!</p>
+      </div>
+      <div class="video_bg">
+        <video id="header_video" src="video/DigiSaladWebsite_block1.mp4" autoplay muted loop></video>
+      </div>
+      <div class="div-line">
+
+      </div>
+    </header>
+    <div class="fuilder-container menu" style="display:none;" :style="click_menu ? 'display:block':'display:none'">
+      <div class="menu-content wrap-container">
+        <div class="iconList-menu d-flex">
+          <div class="logo"><img src="images/logo_w.png" alt=""></div>
+          <div class="close-btn" @click="NavIsopen"><img src="images/Close-icons.svg" alt="" style="width: 22px;"></div>
+        </div>
+
+        <ul class="menu-navList">
+          <li class="box about br-30 d-flex">
+            <div class="img">
+              <img src="images/veg_01.png" alt="">
+            </div>
+            <div class="descr">
+              <p class="box-sectitle">EMPOWERING BRANDS</p>
+              <h1 class="box-title">ABOUT US<span class="box-circle c-pink"></span></h1>
+            </div>
+          </li>
+          <li class="box work br-30 d-flex">
+            <div class="img">
+              <img src="images/tomato.png" alt="">
+            </div>
+            <div class="descr">
+              <p class="box-sectitle">CASE STUDIES</p>
+              <h1 class="box-title">WORKS<span class="box-circle c-cyan"></span></h1>
+            </div>
+          </li>
+          <li class="box carrer br-30 d-flex">
+            <div class="img">
+              <img src="images/cheese.png" alt="">
+            </div>
+            <div class="descr">
+              <p class="box-sectitle">BE COOL WITH US</p>
+              <h1 class="box-title">CAREERS<span class="box-circle c-pink"></span></h1>
+            </div>
+          </li>
+          <li class="box insight br-30 d-flex">
+            <div class="img">
+              <img src="images/cucumber.png" alt="">
+            </div>
+            <div class="descr">
+              <p class="box-sectitle">OUR STRATEGIES</p>
+              <h1 class="box-title">INSIGHTS<span class="box-circle c-pink"></span></h1>
+            </div>
+          </li>
+
+          <li class="box service br-30 d-flex">
+            <div class="img">
+              <img src="images/carrot.png" alt="">
+            </div>
+            <div class="descr">
+              <p class="box-sectitle">AREAS OF EXPERTISE</p>
+              <h1 class="box-title">SERVICES<span class="box-circle c-pink"></span></h1>
+            </div>
+          </li>
+          <li class="box contact br-30 d-flex">
+            <p class="box-sectitle">START YOUR JOURNEY WITH US</p>
+            <h1 class="box-title">CONTACT<span class="box-circle c-pink"></span></h1>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="fuilder-container main">
+      <section class="about wrap-container">
+        <div class="block">
+          <h3 class="block-title about">ABOUT DIGISALAD <span class="box-circle c-pink"></span></h3>
+          <div class="video-block">
+            <video class="videoSource" src="video/DigiSalad_block2.mp4" autoplay muted loop></video>
+            <div class="video-descr">
+              Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+              tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis.
+              Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit
+              ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum
+              quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec
+              lacus. Cras lobortis molestie faucibus.
+            </div>
+            <div class="block-btn about-btn cyan">VIEW MORE</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="awards-ourServies-profile">
+        <div class="awards wrap-container">
+          <div class="block">
+            <div class="awards-container d-flex">
+              <div class="awards-desc">
+                <h3 class="block-title about">AWARDS<span class="box-circle c-pink"></span></h3>
+                <p class="desc-loream">
+                  Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+                  tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis.
+                  Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc.
+                </p>
+              </div>
+              <div class="awards-images">
+                <div class="pic">
+                  <img src="images/AWARDS.png" alt="">
+                </div>
+                <div class="pic">
+                  <img src="images/AWARDS.png" alt="">
+                </div>
+                <div class="pic">
+                  <img src="images/AWARDS.png" alt="">
+                </div>
+                <div class="pic">
+                  <img src="images/AWARDS.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ourServies">
+          <div class="block">
+            <div class="ourServies-Intro wrap-container">
+              <h3 class="block-title ourServies">OUR INGRADIENTS<span class="box-circle c-pink"></span></h3>
+              <p class="desc-loream">
+                Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+                tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis.
+                Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec
+                elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem
+                elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque
+                eros nec lacus. Cras lobortis molestie faucibus.
+              </p>
+              <div class="block-btn about-btn purle">OUR SERVICES</div>
+            </div>
+            <ul class="servieslist wrap-container">
+              <li class="serviesBox" v-for="serve in servieslist">
+                <div class="serv-img">
+                  <img :src="serve.img" alt="">
+                </div>
+                <h6 class="serv-Title">{{serve.title}}</h6>
+                <p class="serv-desc">
+                  Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+                  tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
+                </p>
+                <div class="serv-btn">VIEW MORE</div>
+              </li>
+
+            </ul>
+            <p class="serv-endTitle">VIEW MORE DIGISALAD’S INGRADIENTS</p>
+          </div>
+        </div>
+        <div class="profile wrap-container">
+          <div class="block">
+            <div class="personal-profile">
+              <div class="l-profile">
+                <div class="pic"><img src="images/profile_pic.png" alt=""></div>
+                <h6 class="profile-name">Tony Ng</h6>
+                <p class="job">Founder & Creative Director</p>
+              </div>
+              <div class="r-profile">
+                <div class="profile-loream">
+                  <div class="lorem-img"><img src="images/Quotemarksleft.png" alt=""></div>
+                  A great digital work isn’t about designing beautiful pages purely. It is about context - how do we
+                  deliver the <span class="mark-title">right experience to the right person at the right time</span>.
+                  The most important thing is that your work can engage customers at anytime, anywhere and let users
+                  experience an entire amazing digital journey.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="brand-exper">
+        <div class="brandAndSlick">
+          <div class="brand-block">
+            <h3 class="block-title brand">OUR BRAND EXPERIENCE<span class="box-circle c-pink"></span></h3>
+            <div class="brand-desc">
+              Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
+              tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis.
+              Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit
+              ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum
+              quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec
+              lacus. Cras lobortis molestie faucibus.
+            </div>
+            <div class="brand-img">
+              <img src="images/DigiSalad-Client-List.png" alt="">
+            </div>
+          </div>
+          <div class="slick-container" ref="slick-main">
+
+            <div class="slick-item  wrap-container">
+              <div class="orderList">
+                <span class="now"> 01</span>/ <span class="total"> 04</span>
+              </div>
+              <div class="item-desc">
+                <div class="pic">
+                  <img src="images/carouse_01.png" alt="">
+                </div>
+                <div class="case-desc">
+                  <p class="case-label">HIGHLIGHTED SHOWCASE</p>
+                  <h2 class="case-title">LP CLUB MOBILE APP</h2>
+                  <p class="case-loream">Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper
+                    bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
+                    Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci.
+                    Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat
+                    orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo
+                    tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+  <script src="JS/vender/Jquery/jquery-3.6.1.js"></script>
+  <script src="JS/vender/slickJS/slick.min.js"></script>
+  <script src="JS/vender/Vue/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          click_menu: false,
+          servieslist: [{
+              title: 'UX Design',
+              img: 'images/INGRADIENTS_image/veg_01.svg'
+            },
+            {
+              title: 'UI Design',
+              img: 'images/INGRADIENTS_image/veg_02.svg'
+            },
+            {
+              title: 'website development',
+              img: 'images/INGRADIENTS_image/veg_03.svg'
+            },
+            {
+              title: 'mobile app development',
+              img: 'images/INGRADIENTS_image/veg_04.svg'
+            },
+            {
+              title: 'ecommerce',
+              img: 'images/INGRADIENTS_image/veg_05.svg'
+            },
+            {
+              title: 'customer loyalty',
+              img: 'images/INGRADIENTS_image/veg_06.svg'
+            },
+            {
+              title: 'digital transformation',
+              img: 'images/INGRADIENTS_image/veg_07.svg'
+            },
+            {
+              title: 'digital marketing',
+              img: 'images/INGRADIENTS_image/veg_08.svg'
+            },
+            {
+              title: 'BRANDING',
+              img: 'images/INGRADIENTS_image/veg_09.svg'
+            },
+          ]
+        };
+      },
+      methods: {
+        NavIsopen() {
+          if (!this.click_menu) {
+            // console.log(`open`);
+            document.querySelector('body').style.overflow = 'hidden';
+            this.click_menu = true;
+          } else {
+            // console.log(`close`);
+            document.querySelector('body').style.overflow = 'auto';
+            this.click_menu = false;
+          }
+        }
+      }
+    });
+
+    app.mount('#myHompage');
+  </script>
+</body>
+
+</html>
