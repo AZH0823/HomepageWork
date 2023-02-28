@@ -155,7 +155,7 @@ body {
 
 header.header.block {
   position: relative;
-  height: calc(100vh - 55px);
+  height: calc(100vh + 4px);
 }
 header.header.block::after {
   content: "";
@@ -353,7 +353,7 @@ header.header.block .video_bg {
   position: absolute;
   left: 0;
   right: 0;
-  top: -55px;
+  top: 0px;
   bottom: 0;
   z-index: -1;
   overflow: hidden;
@@ -371,6 +371,7 @@ header.header.block .video_bg::before {
 header.header.block .video_bg #header_video {
   display: block;
   width: 100%;
+  height: 100vh;
   height: 100vh;
   object-fit: cover;
   filter: blur(2px) hue-rotate(30deg);
@@ -454,10 +455,13 @@ header.header.block .div-line::after {
   display: grid;
   height: 90vh;
   grid-template-columns: repeat(3, minmax(125px, 1fr));
-  grid-template-rows: 52px repeat(7, minmax(50px, 125px)) 150px;
+  grid-template-rows: 52px repeat(7, 2fr) 6fr;
   gap: 40px 40px;
   padding: 0 min(140px, 9.8%);
   scroll-behavior: auto;
+  scroll-behavior: auto;
+  overflow-y: auto;
+  margin-top: -5vh;
 }
 @media all and (max-width: 896px) {
   .fuilder-container.menu .menu-content.wrap-container .menu-navList {
@@ -1104,6 +1108,8 @@ header.header.block .div-line::after {
   padding: 0 13.88%;
 }
 .fuilder-container.main .brandAndSlick .brand-img img {
+  display: block;
+  margin: 0 auto;
   max-width: 100%;
   object-fit: cover;
 }

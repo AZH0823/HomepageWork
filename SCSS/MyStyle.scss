@@ -96,7 +96,7 @@ body {
 // header 主畫面
 header.header.block {
   position: relative;
-  height: calc(100vh - 55px);
+  height: calc(100vh - -4px);
 
   &::after {
     content: '';
@@ -340,7 +340,7 @@ header.header.block {
     position: absolute;
     left: 0;
     right: 0;
-    top: -55px;
+    top: 0px;
     bottom: 0;
     z-index: -1;
     overflow: hidden;
@@ -361,6 +361,7 @@ header.header.block {
     #header_video {
       display: block;
       width: 100%;
+      height: 100vh;
       // max-height: 940px;
       // height: 952px;
       height: 100vh;
@@ -459,15 +460,27 @@ header.header.block {
 
 
     .menu-navList {
+      // color: white;
+      // // letter-spacing: 2em;
+      // display: grid;
+      // height: 90vh;
+      // grid-template-columns: repeat(3, minmax(125px, 1fr));
+      // grid-template-rows: 52px repeat(7, minmax(50px, 125px)) 150px;
+      // gap: 40px 40px;
+      // padding: 0 min(140px, 9.8%);
+      // scroll-behavior: auto;
+
       color: white;
-      // letter-spacing: 2em;
       display: grid;
       height: 90vh;
       grid-template-columns: repeat(3, minmax(125px, 1fr));
-      grid-template-rows: 52px repeat(7, minmax(50px, 125px)) 150px;
+      grid-template-rows: 52px repeat(7, 2fr) 6fr;
       gap: 40px 40px;
       padding: 0 min(140px, 9.8%);
       scroll-behavior: auto;
+      scroll-behavior: auto;
+      overflow-y: auto;
+      margin-top: -5vh;
 
       @include pad() {
         gap: 20px 20px;
@@ -848,20 +861,24 @@ header.header.block {
       .block-title {
         // margin: 20px auto 50px;
         margin: -15px auto 30px;
-            position: relative;
-          text-align: left;
-          max-width: 250px;
-         &.about::after {
+        position: relative;
+        text-align: left;
+        max-width: 250px;
+
+        &.about::after {
           content: "aaaaaaa";
           left: -46.5%;
           transform: translateX(50%);
         }
+
         @include pad() {
           text-align: center;
+
           & {
             margin: 0px auto 30px;
           }
-           &.about::after{
+
+          &.about::after {
             left: -25.5%;
           }
         }
@@ -870,12 +887,13 @@ header.header.block {
           & {
             margin: 30px auto 30px;
           }
-          &.about::after{
+
+          &.about::after {
             left: -25.5%;
           }
         }
 
-       
+
       }
 
       .awards-desc {
@@ -1205,7 +1223,7 @@ header.header.block {
     z-index: 1;
   }
 
-  .brandAndSlick{
+  .brandAndSlick {
     .block {}
 
     .block-title.brand {
@@ -1223,7 +1241,7 @@ header.header.block {
         text-decoration-color: #26C6D0;
         text-decoration-line: underline;
 
-        @include mobile(){
+        @include mobile() {
           content: "aaaaaaaa";
         }
       }
@@ -1239,14 +1257,17 @@ header.header.block {
       color: #262626;
 
       max-width: 1007px;
-      padding: 7px; 
+      padding: 7px;
       min-height: 216px;
     }
-    .brand-img{
+
+    .brand-img {
       margin: 0 auto;
       padding: 0 13.88%;
 
-      img{
+      img {
+        display: block;
+        margin: 0 auto;
         max-width: 100%;
         object-fit: cover;
       }
@@ -1254,13 +1275,14 @@ header.header.block {
 
 
     // 輪播圖動畫
-    .slick-container{
+    .slick-container {
       width: 100%;
-      
-      
+
+
       position: relative;
       overflow: hidden;
-      &::before{
+
+      &::before {
         content: '';
         position: absolute;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/carouse_01.png');
@@ -1271,12 +1293,13 @@ header.header.block {
         max-width: 1484px;
         width: 100vw;
         min-height: 1484px;
-        
+
 
         z-index: -1;
       }
+
       color: white;
     }
   }
-  
+
 }
