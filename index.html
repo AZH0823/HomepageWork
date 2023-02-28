@@ -244,26 +244,33 @@
 
             <div class="slick-item  wrap-container">
               <div class="pagetor-view">
-                <div class="item-desc">
-                <div class="orderList">
-                <span class="now"> 01</span><span class="total"> 04</span>
-              </div>
-                <div class="pic">
-                  <img src="images/carouse_01.png" alt="">
+                <div class="item-desc" v-for="(item,idx) in 3">
+                  <div class="orderList">
+                    <span class="now">0{{(idx + 1)}}</span><span class="total"> 03</span>
+                  </div>
+                  <div class="pic-contaniner">
+                    <div class="pic">
+                      <img src="images/carouse_01.png" alt="">
+                    </div>
+                    <div class="block-btn slick-item cyan">OUR SERVICES</div>
+                  </div>
+
+                  <div class="case-desc">
+                    <p class="case-label">HIGHLIGHTED SHOWCASE-0{{(idx + 1)}}</p>
+                    <h2 class="block-title case-title">LP CLUB MOBILE APP<span class="box-circle c-pink"></span></h2>
+                    <p class="case-loream">Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper
+                      bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
+                      Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci.
+                      Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In
+                      feugiat
+                      orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc
+                      leo
+                      tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                  </div>
                 </div>
-                <div class="case-desc">
-                  <p class="case-label">HIGHLIGHTED SHOWCASE</p>
-                  <h2 class="block-title case-title">LP CLUB MOBILE APP<span class="box-circle c-pink"></span></h2>
-                  <p class="case-loream">Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper
-                    bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
-                    Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci.
-                    Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat
-                    orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo
-                    tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
-                </div>
+                 
               </div>
-              </div>
-              
+
 
 
             </div>
@@ -276,6 +283,7 @@
   <script src="JS/vender/Jquery/jquery-3.6.1.js"></script>
   <script src="JS/vender/slickJS/slick.js"></script>
   <script src="JS/vender/Vue/vue.global.js"></script>
+
   <script>
     const app = Vue.createApp({
       data() {
@@ -321,6 +329,18 @@
         };
       },
       methods: {
+        initSlick(){
+           $(document).ready(function(){
+            $('.pagetor-view').slick({
+              'setting-name': 'setting-value',
+              slidesToShow: 1,
+              infinite: true,
+              speed: 1200,
+              // autoplay: true,
+              autoplaySpeed: 2000,
+            });
+          });
+        },
         NavIsopen() {
           if (!this.click_menu) {
             // console.log(`open`);
@@ -332,6 +352,9 @@
             this.click_menu = false;
           }
         }
+      },
+      mounted(){
+        this.initSlick();
       }
     });
 

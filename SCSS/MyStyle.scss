@@ -45,7 +45,7 @@ body {
   letter-spacing: 2.22222px;
 
   padding: 35px 25px 35px 25px;
-
+  transition: transform 0.65s ease-out;
   &::after {
     content: '';
     height: 1px;
@@ -54,6 +54,10 @@ body {
     display: block;
     background-color: white;
     border-radius: 1px;
+  }
+  &:hover{
+    transform: scale(1.05);
+    transition: transform 0.35s ease-in;
   }
 
   &.cyan {
@@ -1148,6 +1152,10 @@ header.header.block {
         @include pad() {
           margin: 0 auto;
         }
+        @include mobile(){
+          width: auto;
+          
+        }
 
         .profile-name {
           font-weight: 700;
@@ -1180,6 +1188,12 @@ header.header.block {
           img {
             max-width: 100%;
             object-fit: cover;
+          }
+          @include mobile(){
+            width: auto;
+            height:unset ;
+            max-width: 204px;
+          
           }
         }
       }
@@ -1281,11 +1295,33 @@ header.header.block {
       position: relative;
       overflow: hidden;
       color: white;
-      .pagetor-view{
-        outline: 2px salmon solid;
+
+      .pagetor-view {
+        // outline: 2px salmon solid;
         max-width: 1200px;
         margin: 0 auto;
+
+        .block-btn.slick-item.cyan {
+          position: absolute;
+          bottom: -17.5%;
+          // left: calc(100vw - 165%);
+          left: calc(62.5% - 50px);
+          width: 200%;
+          max-width: 300px;
+          padding: 60px 30px;
+          padding-left: 50px;
+
+          @media screen and (max-width: 960px) {
+            &{
+              position: static;
+              margin: 30px auto 15px;
+              padding: 30px 20px;
+              padding-left: 50px;
+            }
+          }
+        }
       }
+
       .item-desc {
         display: flex;
         margin: 240px 8.3%;
@@ -1295,7 +1331,7 @@ header.header.block {
 
         @include pad() {
           flex-direction: column;
-          
+
           margin: 120px 8.3%;
         }
 
@@ -1328,7 +1364,7 @@ header.header.block {
               border-radius: 50%;
               width: 1px;
               background-color: #26C6D0;
-              
+
               transform: rotate(45deg) translate(-50%, -50%);
             }
 
@@ -1342,17 +1378,25 @@ header.header.block {
           }
         }
 
-        .pic {
-          max-width: 555px;
-          max-height: 555px;
-          border-radius: 25px;
-          overflow: hidden;
+        .pic-contaniner {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          flex-wrap: wrap;
+          .pic {
+            max-width: 555px;
+            max-height: 555px;
+            border-radius: 25px;
+            overflow: hidden;
 
-          img {
-            max-width: 100%;
-            object-fit: cover;
+            img {
+              max-width: 100%;
+              object-fit: cover;
+            }
           }
         }
+
 
         .case-desc {
           max-width: 432px;
@@ -1362,7 +1406,9 @@ header.header.block {
             font-size: 16px;
             line-height: 19px;
             letter-spacing: 2.22222px;
-
+            @include mobile(){
+              text-align: center;
+            }
           }
 
           .case-title {
@@ -1388,6 +1434,9 @@ header.header.block {
               z-index: -1;
               background-color: #26C6D0;
               ;
+            }
+            @include mobile(){
+              font-size: 26px;
             }
           }
 

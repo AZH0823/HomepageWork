@@ -111,6 +111,7 @@ body {
   line-height: 19px;
   letter-spacing: 2.22222px;
   padding: 35px 25px 35px 25px;
+  transition: transform 0.65s ease-out;
 }
 .block-btn::after {
   content: "";
@@ -120,6 +121,10 @@ body {
   display: block;
   background-color: white;
   border-radius: 1px;
+}
+.block-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.35s ease-in;
 }
 .block-btn.cyan {
   background-color: #26C6D0;
@@ -1012,6 +1017,11 @@ header.header.block .div-line::after {
     margin: 0 auto;
   }
 }
+@media all and (max-width: 428px) {
+  .fuilder-container.main .profile .personal-profile .l-profile {
+    width: auto;
+  }
+}
 .fuilder-container.main .profile .personal-profile .l-profile .profile-name {
   font-weight: 700;
   font-size: 20px;
@@ -1040,6 +1050,13 @@ header.header.block .div-line::after {
 .fuilder-container.main .profile .personal-profile .l-profile .pic img {
   max-width: 100%;
   object-fit: cover;
+}
+@media all and (max-width: 428px) {
+  .fuilder-container.main .profile .personal-profile .l-profile .pic {
+    width: auto;
+    height: unset;
+    max-width: 204px;
+  }
 }
 .fuilder-container.main .profile .personal-profile .r-profile .profile-loream {
   max-width: 735px;
@@ -1120,9 +1137,25 @@ header.header.block .div-line::after {
   color: white;
 }
 .fuilder-container.main .brandAndSlick .slick-container .pagetor-view {
-  outline: 2px salmon solid;
   max-width: 1200px;
   margin: 0 auto;
+}
+.fuilder-container.main .brandAndSlick .slick-container .pagetor-view .block-btn.slick-item.cyan {
+  position: absolute;
+  bottom: -17.5%;
+  left: calc(62.5% - 50px);
+  width: 200%;
+  max-width: 300px;
+  padding: 60px 30px;
+  padding-left: 50px;
+}
+@media screen and (max-width: 960px) {
+  .fuilder-container.main .brandAndSlick .slick-container .pagetor-view .block-btn.slick-item.cyan {
+    position: static;
+    margin: 30px auto 15px;
+    padding: 30px 20px;
+    padding-left: 50px;
+  }
 }
 .fuilder-container.main .brandAndSlick .slick-container .item-desc {
   display: flex;
@@ -1174,13 +1207,20 @@ header.header.block .div-line::after {
 .fuilder-container.main .brandAndSlick .slick-container .item-desc .orderList span.total {
   margin-right: -25px;
 }
-.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic {
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic-contaniner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic-contaniner .pic {
   max-width: 555px;
   max-height: 555px;
   border-radius: 25px;
   overflow: hidden;
 }
-.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic img {
+.fuilder-container.main .brandAndSlick .slick-container .item-desc .pic-contaniner .pic img {
   max-width: 100%;
   object-fit: cover;
 }
@@ -1192,6 +1232,11 @@ header.header.block .div-line::after {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 2.22222px;
+}
+@media all and (max-width: 428px) {
+  .fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-label {
+    text-align: center;
+  }
 }
 .fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-title {
   margin-top: 20px;
@@ -1215,6 +1260,11 @@ header.header.block .div-line::after {
   width: 100%;
   z-index: -1;
   background-color: #26C6D0;
+}
+@media all and (max-width: 428px) {
+  .fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-title {
+    font-size: 26px;
+  }
 }
 .fuilder-container.main .brandAndSlick .slick-container .item-desc .case-desc .case-loream {
   font-weight: 400;
