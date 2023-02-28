@@ -30,7 +30,14 @@ body {
     margin-top: 0;
   }
 }
-
+.fadein{
+  opacity: 1;
+  transition: 5s all;
+}
+.fadeout{
+  opacity: 0;
+  transition: 5s all;
+}
 .block-btn {
   cursor: pointer;
   color: white;
@@ -480,9 +487,9 @@ header.header.block {
       grid-template-columns: repeat(3, minmax(125px, 1fr));
       grid-template-rows: 52px repeat(7, 2fr) 6fr;
       gap: 40px 40px;
-      padding: 0 min(140px, 9.8%);
-      scroll-behavior: auto;
-      scroll-behavior: auto;
+      padding: 10px min(140px, 9.8%);
+      // scroll-behavior: auto;
+      // scroll-behavior: auto;
       overflow-y: auto;
       margin-top: -5vh;
 
@@ -524,9 +531,11 @@ header.header.block {
         grid-template-columns: repeat(1, minmax(125px, 1fr));
         grid-template-rows: none;
         align-content: center;
-
+       
+        
         .box {
           height: 10vh;
+         
         }
 
         .box.about {
@@ -543,6 +552,8 @@ header.header.block {
           grid-area: auto;
           flex-direction: row;
           justify-content: start;
+
+          
         }
 
         .box.work {
@@ -560,8 +571,16 @@ header.header.block {
         .box.contact {
           grid-area: auto;
         }
+        .box.work,.box.contact,
+        .box.service,
+        .box.about,
+        .box.work,
+        .box.carrer,
+        .box.insight{
+          justify-content: center;
+        }
       }
-
+    
       @include mobile() {
         .box.work {
           grid-area: auto;
@@ -593,6 +612,12 @@ header.header.block {
         &:hover {
           filter: brightness(1.25);
         }
+        @media screen and (max-width : 540px) {
+           padding: 15px 10px;
+           img{
+              height: 30px;
+           }
+        }
 
         .box-title {
           font-weight: 700;
@@ -606,6 +631,9 @@ header.header.block {
           @include pad() {
             font-size: 22px;
             line-height: 20px;
+          }
+          @media screen and (max-width:540px) {
+              font-size: 26px;
           }
 
           .box-circle {
@@ -635,6 +663,10 @@ header.header.block {
           line-height: 19px;
           letter-spacing: 1.8px;
           margin-bottom: 9px;
+
+          @media screen and (max-width:540px) {
+              font-size: 12px;
+          }
         }
       }
 
@@ -703,17 +735,23 @@ header.header.block {
         background-position: center;
         background-size: cover;
         grid-area: 1/2/7/3;
-
-        justify-content: flex-end;
-        flex-direction: column;
-
+        align-items: flex-end;
+       
+        flex-direction: row;
         @include pad() {
           justify-content: center;
+          flex-direction: column;
+           justify-content: flex-end;
         }
 
         &>.img {
+          
           flex-basis: unset;
-          margin-bottom: 30px;
+          margin-bottom: 10px;
+          margin-right: 17px;
+          @include pad(){
+            margin-bottom: 15px;
+          }
         }
       }
 
@@ -761,10 +799,16 @@ header.header.block {
 
         .box-title {
           color: #26C6D0;
+          @media screen and(max-width: 540px) {
+            text-align: center;
+          }
         }
 
         .box-sectitle {
           color: #262626;
+          @media screen and(max-width: 540px) {
+            text-align: center;
+          }
         }
       }
 
@@ -812,11 +856,42 @@ header.header.block {
   }
 
   .video-block {
-    .videoSource {
-      display: block;
+    .video-view{
+      position: relative;
+      // outline: 2px solid red;
       margin: 0 auto;
       max-width: 960px;
       width: 90%;
+
+      .video-icon-play{
+        position: absolute;
+        
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border: 8px rgba(255, 255, 255, 0.9) solid;
+        border-radius: 50%;
+        max-width: 110px;
+        width: 80%;
+        cursor: pointer;
+        
+        box-shadow: 
+        rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        transition:opacity 2.0s ease-in;
+        opacity: 1;
+        img{
+          max-width: 100%;
+        }
+      }
+    }
+    .videoSource {
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      
+      width: 100%;
     }
 
     .video-descr {

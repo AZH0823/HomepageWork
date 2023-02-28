@@ -128,7 +128,13 @@
         <div class="block">
           <h3 class="block-title about">ABOUT DIGISALAD <span class="box-circle c-pink"></span></h3>
           <div class="video-block">
-            <video class="videoSource" src="video/DigiSalad_block2.mp4" autoplay muted loop></video>
+            <div class="video-view" title="點擊畫面即可暫停影片或撥放影片">
+              <video class="videoSource" src="video/DigiSalad_block2.mp4" ref="videoPlayer" :muted="!isPlayed" loop @click.stop="videoPlayToggle">
+              </video>
+              <div class="video-icon-play" v-show="!isPlayed" @click.stop="videoPlayToggle" ref="play_icon">
+                <img src="images/media-play-icon.svg" alt="" >
+              </div>
+            </div>
             <div class="video-descr">
               Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
               tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis.
@@ -288,6 +294,7 @@
     const app = Vue.createApp({
       data() {
         return {
+          isPlayed : false,
           click_menu: false,
           servieslist: [{
               title: 'UX Design',
@@ -350,6 +357,18 @@
             // console.log(`close`);
             document.querySelector('body').style.overflow = 'auto';
             this.click_menu = false;
+          }
+        },
+        videoPlayToggle(){
+          if(!this.isPlayed){
+            // console.log(this.$refs.videoPlayer)
+            this.$refs.videoPlayer.play();
+            this.isPlayed = true;
+            
+          }else{
+            this.$refs.videoPlayer.pause();
+            this.isPlayed = false;
+            
           }
         }
       },
