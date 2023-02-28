@@ -2,7 +2,7 @@
 /* Slider */
 .slick-loading .slick-list
 {
-    background: #fff url('./ajax-loader.gif') center center no-repeat;
+    background: #fff url('../Slickpack/ajax-loader.gif') center center no-repeat;
 }
 
 /* Icons */
@@ -13,7 +13,7 @@
     font-style: normal;
 
     src: url('./fonts/slick.eot');
-    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('../Slickpack/slick.woff') format('woff'), url('../Slickpack/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
 /* Arrows */
 .slick-prev,
@@ -21,14 +21,14 @@
 {
     font-size: 0;
     line-height: 0;
-
+    z-index: 999;
     position: absolute;
     top: 50%;
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 53px;
+    height: 53px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -62,16 +62,37 @@
 {
     opacity: .25;
 }
+.slick-prev.slick-arrow::after,
+.slick-next.slick-arrow::after{
+    content: '';
+    position: absolute;
+    background-color: white;
+        width: 45px;
+    height: 45px;
+    
+    border-radius: 50%;
+    z-index: -1;
+}
+.slick-prev.slick-arrow::after{
+    left: 4px;
+    top: 0px;
+}
+.slick-next.slick-arrow::after{
+    left: 3px;
+    top: 0px;
+}
 
 .slick-prev:before,
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    /* font-size: 20px; */
+    font-size: 53px;
     line-height: 1;
-
-    opacity: .75;
-    color: white;
+   
+    opacity: 1;
+    /* color: white; */
+    color:#26C6D0;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,7 +100,8 @@
 
 .slick-prev
 {
-    left: -25px;
+    /* left: -25px; */
+    left: 0%;
 }
 [dir='rtl'] .slick-prev
 {
@@ -97,7 +119,8 @@
 
 .slick-next
 {
-    right: -25px;
+    /* right: -25px; */
+    right: 0%;
 }
 [dir='rtl'] .slick-next
 {
