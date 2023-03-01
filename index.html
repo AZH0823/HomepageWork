@@ -15,13 +15,17 @@
   <div class="fuilder-container" id="myHompage">
     <header class="block header">
       <div class="wrap-container">
-        <nav class="iconList" :style="click_menu ? 'opacity:0;':'opacity:1;' ">
-          <div class="l-nav">
+        <nav class="iconList" id="iconList_nav" :style="click_menu ? 'opacity:0;':'opacity:1;' ">
+          <!-- <div class="l-nav">
             <img src="images/logo_c.png" alt="" style="display:none">
+          </div> -->
+          <div class="l-nav">
+            <img src="images/logo_c.png" v-show="isFixed" alt="" >
           </div>
           <div class="r-nav">
             <div class="btn">START YOUR PROJECT</div>
-            <div class="menu_icon" @click="NavIsopen"><img src="images/Menu-icons.svg" alt=""></div>
+            <div class="menu_icon" @click="NavIsopen">
+              <img :src="!isFixed ?'images/Menu-icons.svg':'images/Menu-icons_fixed.svg'" alt=""></div>
             <!-- menu icon display -->
 
           </div>
@@ -294,6 +298,7 @@
     const app = Vue.createApp({
       data() {
         return {
+          isFixed:false,
           isPlayed : false,
           click_menu: false,
           servieslist: [{
@@ -370,10 +375,27 @@
             this.isPlayed = false;
             
           }
+        },
+        handleScroll(){
+          const offsetY = 50;
+          const Header100vh = document.querySelector('.block.header').scrollHeight
+
+          const iconList = document.querySelector('.iconList')
+      
+          if(window.top.scrollY >= Header100vh - offsetY){
+            // console.log(`add fixed css`)
+            iconList.classList.add('vh-fixed');
+            this.isFixed = true;
+          }else{
+            // console.log(`add position css`)
+            iconList.classList.remove('vh-fixed');
+            this.isFixed = false;
+          }
         }
       },
       mounted(){
         this.initSlick();
+        window.addEventListener("scroll", this.handleScroll)
       }
     });
 

@@ -209,6 +209,7 @@ header.header.block nav.iconList .r-nav > .btn, header.header.block nav.iconList
 header.header.block nav.iconList .r-nav .btn {
   color: white;
   text-align: center;
+  visibility: visible;
   font-weight: 700;
   font-size: 14px;
   padding: 13px 11px;
@@ -240,6 +241,26 @@ header.header.block nav.iconList::after {
   display: block;
   visibility: hidden;
   height: 0;
+}
+header.header.block nav.iconList.vh-fixed {
+  z-index: 10000;
+  margin-top: -1px;
+  margin-bottom: 0;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  height: 100px;
+}
+header.header.block nav.iconList.vh-fixed .l-nav {
+  padding-top: 25px;
+}
+header.header.block nav.iconList.vh-fixed .r-nav {
+  padding-top: 25px;
+}
+@media screen and (max-width: 540px) {
+  header.header.block nav.iconList.vh-fixed .r-nav .btn {
+    display: none;
+  }
 }
 header.header.block .header-content {
   margin-top: 110px;
@@ -426,6 +447,8 @@ header.header.block .div-line::after {
   box-sizing: border-box;
   top: 0;
   left: 0;
+  display: block;
+  z-index: 9999;
 }
 .fuilder-container.menu::before {
   content: "";
@@ -540,7 +563,8 @@ header.header.block .div-line::after {
   .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.contact {
     grid-area: auto;
   }
-  .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.work, .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.contact,
+  .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.work,
+.fuilder-container.menu .menu-content.wrap-container .menu-navList .box.contact,
 .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.service,
 .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.about,
 .fuilder-container.menu .menu-content.wrap-container .menu-navList .box.work,
