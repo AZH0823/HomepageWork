@@ -250,6 +250,7 @@ header.header.block nav.iconList.vh-fixed {
   position: fixed;
   background-color: #fff;
   height: 100px;
+  left: 0;
 }
 header.header.block nav.iconList.vh-fixed .l-nav {
   padding-top: 25px;
